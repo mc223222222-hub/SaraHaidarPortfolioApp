@@ -1,0 +1,19 @@
+{
+    "patternImgSrc": "/images/palais_de_justice.jpg",
+    "content": {
+        "tabs": [
+            {
+                "titleKey": "immigrationTabTitle",
+                "contentKey": "immigrationTabContent"
+            },
+            {
+                "titleKey": "businessTabTitle",
+                "contentKey": "businessTabContent"
+            },
+            {
+                "titleKey": "foreignBusinessTabTitle",
+                "contentKey": "foreignBusinessTabContent"
+            }
+        ]
+    }
+}

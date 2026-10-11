@@ -1,0 +1,44 @@
+{
+    "firstPageSrc": "/images/Eiffel_tower_paris_france.jpg",
+    "firstPageWordsImgs": [
+        {
+            "src": "/images/liberte.png",
+            "classname": "frenchFlag_blue"
+        },
+        {
+            "src": "/images/egalite.png",
+            "classname": "frenchFlag_white"
+        },
+        {
+            "src": "/images/fraternite.png",
+            "classname": "frenchFlag_red"
+        }
+    ],
+    "secondPage": {
+        "imgSrc": "/images/portrait_5b_transparentBg.png",
+        "textContent": {}
+    },
+    "thirdPage": {
+        "expertisesIcons": [
+            {
+                "src": "/icons/familyReunionIcon.png",
+                "href": ""
+            },
+            {
+                "src": "/icons/visaApplicationIcon.png",
+                "href": ""
+            },
+            {
+                "src": "/icons/passportIcon.png",
+                "href": ""
+            },
+            {
+                "src": "/icons/startupIcon.png",
+                "href": ""
+            }
+        ]
+    },
+    "fourthPage": {
+        "sideImgSrc": "/images/lady_justice.png"
+    }
+}

@@ -1,0 +1,120 @@
+.contactPageContainer {
+    max-height: calc(100vh - 4rem);
+    min-height: calc(100vh - 4rem);
+    display: flex;
+    justify-content: space-around;
+    padding-inline: 2rem;
+    gap: 1rem;
+
+    .contactFormContainer {
+        padding: 2rem;
+        flex-basis: 60%;
+        align-self: center;
+        background: linear-gradient(45deg, rgba(0, 0, 0, 1) 79%, rgba(87, 66, 0, 1) 98%);
+        color: white;
+        border-radius: 0.5rem;
+
+        .title {
+            font-size: 3.5rem;
+            padding-bottom: 3rem;
+            white-space: nowrap;
+            font-family: 'Roboto';
+            font-weight: normal;
+        }
+    }
+
+    .imgContainer {
+        flex-basis: 30%;
+
+        img {
+            object-fit: contain;
+            height: auto;
+            max-height: 80%;
+            align-self: end;
+        }
+    }
+
+    .contactForm {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        color: black;
+        flex-basis: 75%;
+        height: min-content;
+        justify-content: space-around;
+        align-self: center;
+
+        .form-submit-button {
+            width: fit-content;
+            align-self: end;
+
+            .MuiSvgIcon-root {
+                color: 'Black';
+                z-index: 2;
+                width: 100%;
+                height: auto;
+            }
+
+            &:disabled {
+                background-color: lightgray;
+            }
+        }
+
+        .MuiButtonBase-root {
+            background-color: gold;
+            color: black;
+            font-weight: bold;
+        }
+
+        .MuiTextField-root {
+            color: white;
+            border-color: white;
+
+            .MuiInputLabel-root {
+                color: white;
+
+                &.Mui-focused {
+                    color: goldenrod;
+                }
+            }
+
+            .MuiInputBase-root {
+                color: white;
+
+                &::before {
+                    border-color: white;
+                }
+
+                &::after {
+                    border-color: goldenrod;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1100px){
+    .contactPageContainer {
+        .imgContainer {
+            display: none;
+        }
+
+        .contactFormContainer {
+            flex-basis: 100%;
+
+            .title {
+                font-size: 2.5rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px){
+    .contactPageContainer {
+        .contactFormContainer {
+            .title {
+                font-size: 1.65rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,341 @@
+.homeContent {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 4rem);
+    overflow: auto;
+    scroll-snap-type: y proximity;
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(45deg, rgba(0, 0, 0, 1) 79%, rgba(87, 66, 0, 1) 98%);
+        color: white;
+        width: 100%;
+        gap: 1.5rem;
+
+        .title {
+            font-family: 'Vladimir Script', 'Brush Script MT';
+            font-size: 6rem;
+        }
+
+        .cardContent {
+            font-size: 1.15rem;
+            line-height: 2.25;
+        }
+    }
+
+    .page_firstPage {
+        width: 100%;
+        // overflow: hidden;
+        position: relative;
+
+        .imgContainer {
+            width: 100%;
+            img {
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+
+        .messageOverlayContainer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            width: 40%;
+
+            .imgContainer {
+                &.frenchFlag_blue {
+                    color: rgba(0, 0, 255, 0.6);
+                }
+
+                &.frenchFlag_white {
+                    color: rgba(255, 255, 255, 0.6);
+                }
+
+                &.frenchFlag_red {
+                    color: rgba(255, 0, 0, 0.6);
+                }
+
+                img {
+                    object-fit: contain;
+                    animation: blurIn 1.5s ease-out forwards;
+                }
+            }
+        }
+    }
+
+    .page_secondPage {
+        justify-content: space-between;
+
+        .homePage_aboutMe {
+            flex-basis: 70%;
+            padding: 2rem 1rem;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+
+            .MuiButton-root {
+                border-radius: 0.25rem;
+                padding: 0.15rem 0.5rem;
+                font-weight: bold;
+                width: fit-content;
+                align-self: flex-end;
+            }
+        }
+
+        .portraitImg {
+            flex-basis: 30%;
+            align-items: end;
+
+            img {
+                object-fit: contain;
+                height: auto;
+                max-height: 80%;
+            }
+        }
+    }
+
+    .page_thirdPage {
+        background: linear-gradient(135deg, rgba(0, 0, 0, 1) 79%, rgba(87, 66, 0, 1) 98%);
+        padding: 2rem;
+        overflow: hidden;
+        justify-content: center;
+
+        .expertise {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 5rem;
+
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            color: black;
+            background: white;
+            flex-basis: 75%;
+            height: min-content;
+            justify-content: space-around;
+            align-self: center;
+
+            .MuiButton-root {
+                border-radius: 0.25rem;
+                padding: 0.15rem 0.5rem;
+                font-weight: bold;
+                width: min-content;
+                white-space: nowrap;
+                align-self: flex-end;
+            }
+
+            .cardContentContainer {
+                display: flex;
+                flex-direction: row;
+            }
+        }
+
+        .expertise_icons {
+            flex-basis: 40%;
+            flex-wrap: wrap;
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            justify-content: flex-end;
+            align-content: start;
+
+            .imgContainer {
+                flex-basis: 34%;
+                border-radius: 0.5rem;
+                height: fit-content;
+
+                img {
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+    .page_fourthPage {
+
+        .itemsContainer {
+            width: 100%;
+        }
+
+        .sideImgContainer {
+            img {
+                object-fit: contain;
+                height: auto;
+                align-self: end;
+                max-height: 100%;
+            }
+        }
+
+        .homePage_publications {
+            padding: 1rem;
+            width: 100%;
+
+            .card {
+                height: fit-content;
+                align-self: center;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                min-height: 18rem;
+
+                .MuiButton-root {
+                    border-radius: 0.25rem;
+                    padding: 0.15rem 0.5rem;
+                    font-weight: bold;
+                    width: min-content;
+                    white-space: nowrap;
+                    align-self: flex-end;
+                }
+            }
+        }
+
+
+    }
+
+    .page_fifthPage {
+        text-align: center;
+
+        .homePage_honorary {
+            width: 100%;
+        }
+
+        .card {
+            border-radius: unset;
+            gap: 5rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cardContent {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+        }
+    }
+}
+
+@keyframes blurIn {
+    0% {
+        background-color: transparent;
+        opacity: 0;
+        filter: blur(8px);
+    }
+
+    100% {
+        background-color: currentColor;
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+@media (max-width: 1200px) {
+    .homeContent {
+        .card {
+            padding: 1rem;
+
+            .title {
+                font-size: 4rem;
+            }
+
+            .cardContent {
+                font-size: 1rem;
+            }
+
+            .MuiButton-root {
+                font-size: 0.75rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .homeContent {
+        .page_firstPage {
+            .messageOverlayContainer {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .homeContent {
+        .page_fourthPage {
+            .imgContainer {
+                display: none;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 800px) {
+    .homeContent {
+        .page_thirdPage {
+            .card {
+                .cardContentContainer {
+                    .expertise {
+                        gap: 2.5rem;
+                    }
+                }
+            }
+
+            .expertise_icons {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .homeContent {
+        .page_firstPage {
+            .messageOverlayContainer {
+                width: 75%;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .homeContent {
+        .card {
+            .title {
+                font-size: 3rem;
+            }
+        }
+
+        .sideImgContainer {
+            display: none;
+        }
+
+
+        .page_thirdPage {
+            .card {
+                flex-basis: 100%;
+            }
+        }
+
+        .page_secondPage {
+            .homePage_aboutMe {
+                flex-basis: 100%;
+            }
+        }
+
+        .page_fourthPage {
+            .homePage_publications {
+                .card {
+                    flex-direction: column;
+                    min-height: 12rem;
+                }
+            }
+        }
+    }
+}

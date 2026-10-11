@@ -1,0 +1,60 @@
+{
+    "formSection": {
+        "formTitleKey": "contactFormTitle",
+        "submitButtonTextKey": "submitButtonText",
+        "submitSuccessMessageKey": "submitSuccessMessage",
+        "submitFailureMessageKey": "submitFailureMessage",
+        "submitBadFormMessageKey": "submitBadFormMessage",
+        "forms": {
+            "fname": {
+                "labelKey": "formFirstNameFieldLabel",
+                "placeholderKey": "formFirstNameFieldPlaceholder",
+                "required": true,
+                "formControlProps": {
+                    "variant": "standard",
+                    "size": "small"
+                }
+            },
+            "lname": {
+                "labelKey": "formLastNameFieldLabel",
+                "placeholderKey": "formLastNameFieldPlaceholder",
+                "required": true,
+                "formControlProps": {
+                    "variant": "standard",
+                    "size": "small"
+                }
+            },
+            "email": {
+                "labelKey": "formEmailFieldLabel",
+                "placeholderKey": "formEmailFieldPlaceholder",
+                "regex": "^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+[.][a-zA-Z]{2,}$",
+                "required": true,
+                "formControlProps": {
+                    "variant": "standard",
+                    "size": "small"
+                }
+            },
+            "phone": {
+                "labelKey": "formPhoneNumberFieldLabel",
+                "placeholderKey": "formPhoneNumberFieldPlaceholder",
+                "regex": "^\\+33[1-9][0-9]{8}$",
+                "formControlProps": {
+                    "variant": "standard",
+                    "size": "small"
+                }
+            },
+            "msg": {
+                "labelKey": "formMessageFieldLabel",
+                "placeholderKey": "formMessageFieldPlaceholder",
+                "required": true,
+                "formControlProps": {
+                    "variant": "standard",
+                    "multiline": true,
+                    "rows": "4",
+                    "size": "small"
+                }
+            }
+        }
+    },
+    "sideImgSrc": "/images/portrait_2b_transparentBg.png"
+}

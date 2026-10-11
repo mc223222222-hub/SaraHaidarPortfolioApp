@@ -1,0 +1,50 @@
+{
+    "publicationsPageHeaderKey": "pageHeader",
+    "content": [
+        {
+            "previewTitleKey": "appointmentDifficultyPubPreviewTitle",
+            "previewContentKey": "appointmentDifficultyPubPreviewContent",
+            "contentKey": "appointmentDifficultyPubContent",
+            "slug": "appointment-difficulty",
+            "contentCategory": "prefectureRelations",
+            "releaseDate": "10/11/2025",
+            "author": "Sara Haidar"
+        },
+        {
+            "previewTitleKey": "jobsInTensionPubPreviewTitle",
+            "previewContentKey": "jobsInTensionPubPreviewContent",
+            "contentKey": "jobsInTensionPubContent",
+            "slug": "jobs-in-tension",
+            "contentCategory": "visaPassport",
+            "releaseDate": "20/11/2025",
+            "author": "Sara Haidar"
+        },
+        {
+            "previewTitleKey": "obtainingFrenchNationalityPubPreviewTitle",
+            "previewContentKey": "obtainingFrenchNationalityPubPreviewContent",
+            "contentKey": "obtainingFrenchNationalityPubContent",
+            "slug": "obtaining-french-nationality",
+            "contentCategory": "nationality",
+            "releaseDate": "20/11/2025",
+            "author": "Sara Haidar"
+        },
+        {
+            "previewTitleKey": "seasonalEmployeeVisaPubPreviewTitle",
+            "previewContentKey": "seasonalEmployeeVisaPubPreviewContent",
+            "contentKey": "seasonalEmployeeVisaPubContent",
+            "slug": "seasonal-employee-visa",
+            "contentCategory": "visaPassport",
+            "releaseDate": "21/11/2025",
+            "author": "Sara Haidar"
+        },
+        {
+            "previewTitleKey": "frenchEntrepreneurVisaPubPreviewTitle",
+            "previewContentKey": "frenchEntrepreneurVisaPubPreviewContent",
+            "contentKey": "frenchEntrepreneurVisaPubContent",
+            "slug": "french-entrepreneur-visa",
+            "contentCategory": "visaPassport",
+            "releaseDate": "29/07/2026",
+            "author": "Sara Haidar"
+        }
+    ]
+}

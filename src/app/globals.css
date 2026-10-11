@@ -1,0 +1,69 @@
+html,
+body {
+  max-width: 100vw;
+  height: 100%;
+  overflow: auto;
+}
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', 'Arial';
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.flex--row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex--col {
+  display: flex;
+  flex-direction: column;
+}
+
+.imgContainer {
+  display: flex;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.card {
+  position: relative;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.glassBg {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.page {
+  display: flex;
+  flex-direction: row;
+  max-height: calc(100vh - 4rem);
+  min-height: calc(100vh - 4rem);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+ul, ol, li {
+  list-style-position: inside;
+}

@@ -1,0 +1,42 @@
+{
+    "pageTitleKey": "pageTitle",
+    "portraitImgSrc": "/images/portrait_2b_transparentBg.png",
+    "textContent": [
+        {
+            "titleKey": "paragraphOneTitle",
+            "paragraphs": [
+                {
+                    "content": "paragraphOneContent",
+                    "paragraphListType": ""
+                }
+            ]
+        },
+        {
+            "titleKey": "paragraphTwoTitle",
+            "paragraphs": [
+                {
+                    "content": "paragraphTwoContent",
+                    "paragraphListType": ""
+                }
+            ]
+        },
+        {
+            "titleKey": "paragraphThreeTitle",
+            "paragraphs": [
+                {
+                    "content": "paragraphThreeContent",
+                    "paragraphListType": ""
+                }
+            ]
+        },
+        {
+            "titleKey": "paragraphFourTitle",
+            "paragraphs": [
+                {
+                    "content": "paragraphFourContent",
+                    "paragraphListType": ""
+                }
+            ]
+        }
+    ]
+}

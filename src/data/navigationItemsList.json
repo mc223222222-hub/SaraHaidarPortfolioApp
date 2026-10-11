@@ -1,0 +1,27 @@
+[
+    {
+        "navTitleMsgsKey": "home",
+        "navTooltipMsgsKey": "homeTooltip",
+        "navPath": "/"
+    },
+    {
+        "navTitleMsgsKey": "aboutMe",
+        "navTooltipMsgsKey": "aboutMeTooltip",
+        "navPath": "/aboutMe"
+    },
+    {
+        "navTitleMsgsKey": "areaOfExpertise",
+        "navTooltipMsgsKey": "areaOfExpertiseTooltip",
+        "navPath": "/areaOfExpertise"
+    },
+    {
+        "navTitleMsgsKey": "publications",
+        "navTooltipMsgsKey": "publicationsTooltip",
+        "navPath": "/publications"
+    },
+    {
+        "navTitleMsgsKey": "contact",
+        "navTooltipMsgsKey": "contactTooltip",
+        "navPath": "/contact"
+    }
+]

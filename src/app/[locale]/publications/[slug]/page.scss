@@ -1,0 +1,48 @@
+.singlePubPage {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    .publication {
+        width: 80%;
+        padding-block: 5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+
+        .title {
+            padding-block: 1.5rem;
+        }
+
+        &>p {
+            padding-bottom: 1rem;
+        }
+
+        ol {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            &>li {
+                padding-bottom: 0.5rem;
+                border-inline-start: 2px solid goldenrod;
+            }
+
+            & li {
+                padding-inline-start: 0.75rem;
+            }
+
+            & li::marker {
+                font-weight: bold;
+            }
+        }
+
+        .MuiButtonBase-root {
+            justify-self: end;
+            align-self: end;
+            color: white;
+            font-weight: bold;
+        }
+    }
+}
