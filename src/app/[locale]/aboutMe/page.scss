@@ -14,11 +14,10 @@
         justify-content: center;
 
         .title {
-            font-size: 4.5rem;
-            line-height: 1.1;
+            font-size: 6rem;
             padding: 1.5rem;
             font-family: 'Vladimir Script', 'Brush Script MT', 'Roboto';
-            white-space: normal;
+            white-space: nowrap;
             align-self: start;
         }
 
@@ -69,7 +68,7 @@
     .aboutMePage {
         .aboutMeContent {
             .title {
-                font-size: 3.25rem;
+                font-size: 4.5rem;
             }
 
             .textContent {
