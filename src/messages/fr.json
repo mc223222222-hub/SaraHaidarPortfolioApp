@@ -10,10 +10,10 @@
             "expertiseCardParagraph": "Notre cabinet est entièrement dédié au droit des étrangers et à la mobilité internationale en France. Nous accompagnons tant les particuliers désireux de voyager, de s’installer ou de travailler en France que les entreprises souhaitant recruter ou employer des talents internationaux. Nous couvrons l’ensemble des démarches : demande ou renouvellement de titres de séjour, procédures de régularisation, mobilité professionnelle (salarié, entrepreneur, passeport-talent…), obtention de tous types de visas (entrepreneur, artiste, création d’entreprise, projet innovant) et naturalisation.",
             "expertiseCardTitle": "Droit des étrangers et mobilité internationale",
             "services": {
-                "familyReunion": "Family reunification",
-                "visaApplications": "Visa applications",
-                "residencePermits": "Residence permits and passports",
-                "businessVisas": "Entrepreneur and business creation visas"
+                "familyReunion": "Regroupement familial",
+                "visaApplications": "Demandes de visa",
+                "residencePermits": "Titres de séjour et passeports",
+                "businessVisas": "Visas entrepreneur et création d’entreprise"
             }
         },
         "fourthPage": {
@@ -108,17 +108,17 @@
         "servicesLink": "Voir tous les services",
         "aboutLink": "À propos de Sarah Haidar",
         "consultationFee": "Honoraires",
-        "bookConsultation": "Book a consultation",
-        "languages": "Languages"
+        "bookConsultation": "Prendre rendez-vous",
+        "languages": "Langues"
     },
     "notFound": {
-        "title": "Page not found",
-        "message": "The page you are looking for does not exist or has moved."
+        "title": "Page introuvable",
+        "message": "La page que vous cherchez n’existe pas ou a été déplacée."
     },
     "images": {
-        "portraitAlt": "Sarah Haidar, immigration lawyer in France",
-        "eiffelTowerAlt": "Eiffel Tower, Paris, France",
-        "ladyJusticeAlt": "Lady Justice",
-        "palaisDeJusticeAlt": "Palais de Justice, Paris"
+        "portraitAlt": "Sarah Haidar, avocate en droit des étrangers en France",
+        "eiffelTowerAlt": "Tour Eiffel, Paris, France",
+        "ladyJusticeAlt": "Allégorie de la Justice",
+        "palaisDeJusticeAlt": "Palais de Justice de Paris"
     }
 }
