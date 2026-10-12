@@ -4,13 +4,16 @@ import "./page.scss"
 import { Button } from "@mui/material";
 import { useParams } from "next/navigation";
 import jsonData from "../../../../data/publicationsData.json";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { localizedPath, isLocale } from "@/lib/seo";
 import { PublicationCategoryColor } from "../page";
 
 export default function PublicationPage() {
 
     const slug = useParams().slug;
     const t = useTranslations('publicationsPage')
+    const rawLocale = useLocale()
+    const locale = isLocale(rawLocale) ? rawLocale : 'en'
     const pubData = jsonData.content.find(item => item.slug == slug)
     const pubContentKey = pubData?.contentKey
 
@@ -33,7 +36,7 @@ export default function PublicationPage() {
                             ) :
                             ''
                     }
-                    <Button sx={{ backgroundColor: PublicationCategoryColor[pubData ? pubData.contentCategory : ""], color: "white" }} href='/publications'>{t('publicationGoBackButton')}</Button>
+                    <Button sx={{ backgroundColor: PublicationCategoryColor[pubData ? pubData.contentCategory : ""], color: "white" }} href={localizedPath(locale, '/publications')}>{t('publicationGoBackButton')}</Button>
                 </div>
             </div>
         </>
