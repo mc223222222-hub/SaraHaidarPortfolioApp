@@ -1,32 +1,42 @@
 {
     "homePage": {
         "secondPage": {
-            "moreAboutMeButtonText": "More Info",
+            "moreAboutMeButtonText": "About Sarah Haidar",
             "aboutMeCardParagraph": "Lawyer, Doctor of Public Law, and lecturer in corporate law. My academic and professional background has allowed me to develop expertise in anti-corruption and compliance, with a particular focus on Arab countries, where these issues intertwine with major political and economic dimensions.",
-            "aboutMeCardTitle": "About Me"
+            "aboutMeCardTitle": "About Sarah Haidar"
         },
         "thirdPage": {
-            "moreExpertiseButtonText": "More Info",
+            "moreExpertiseButtonText": "See all immigration services",
             "expertiseCardParagraph": "Our firm is entirely dedicated to immigration law and international mobility in France. We assist both individuals wishing to travel, settle, or work in France, and companies looking to recruit or employ international talent. We handle all procedures: applications or renewals of residence permits, regularization processes, professional mobility (employee, entrepreneur, talent passport, etc.), obtaining all types of visas (entrepreneur, artist, business creation, innovative project), and naturalization.",
-            "expertiseCardTitle": "Expertises"
+            "expertiseCardTitle": "Immigration and International Mobility Services",
+            "services": {
+                "familyReunion": "Family reunification",
+                "visaApplications": "Visa applications",
+                "residencePermits": "Residence permits and passports",
+                "businessVisas": "Entrepreneur and business creation visas"
+            }
         },
         "fourthPage": {
-            "morePublicationsButtonText": "More Info",
+            "morePublicationsButtonText": "Read the publications",
             "publicationsCardTitle": "Publications"
         },
         "fifthPage": {
-            "honoraryTitle": "Honorary",
+            "honoraryTitle": "Consultation Fee",
             "honoraryContent": "<p>The consultation fee is €150 including VAT.</p><p>If I take on your case and am able to assist you, this amount will be deducted from the total fees.</p><p>Lawyer fees in France are freely determined, and may be established either as a flat fee or on the basis of an hourly rate. They vary depending on the complexity of the case, the time required for its handling, and procedural deadlines.</p><p>The financial terms will be defined during our first meeting. Any opening of a case will require the signing of a fee agreement.</p>"
+        },
+        "firstPage": {
+            "heroTitle": "Immigration Lawyer in France",
+            "heroSubtitle": "Residence permits, visas, talent passport and naturalization for individuals and companies."
         }
     },
     "aboutMePage": {
-        "title": "About Me",
+        "title": "Sarah Haidar, Avocat and Doctor of Public Law",
         "paragraphOneContent": "Lawyer, Doctor of Public Law, and lecturer in corporate law, Maitre HAIDAR is fluent in French, English, and Arabic. Her academic and professional background has enabled her to develop expertise in anti-corruption and compliance, with a particular focus on Arab countries, where these issues intertwine with major political and economic dimensions.",
         "paragraphTwoContent": "Through my diverse experience in law firms, NGOs, and public administrations in France and abroad, I have developed a disciplined working approach grounded in responsiveness, active listening, and a multidisciplinary perspective on legal issues.",
         "paragraphThreeContent": "I have also developed expertise in immigration law, particularly since the Beirut port explosion, during which I was approached to assist many individuals with their procedures. At the same time, my passion for entrepreneurship has led me to support project leaders and business owners. Aware of the heavy workload and challenges they face, I aim to put my skills at their service to help them anticipate and overcome these obstacles."
     },
     "areaOfExpertisePage": {
-        "firstPageHeader": "Area Of Expertise",
+        "firstPageHeader": "Immigration Law Services in France",
         "tabsContent": {
             "immigrationTabTitle": "Immigration Law",
             "immigrationTabContent": "<h2>Immigration Law</h2><p>The firm assists individuals and businesses in all their procedures related to entering and residing in France.</p><ol><li><strong>Visas, Residence Permits, and Legalization of Stay</strong><ul><li>Applications and renewals of residence permits</li><li>Work authorization requests</li><li>Legalization of stay for undocumented immigrants (traditional procedures and exceptional admission)</li><li>Assistance at the prefecture, preparation, and follow-up of applications</li><li>Legalization under “shortage occupations”</li><li>Change of status</li></ul></li><li><strong>Family and Private Life</strong><ul><li>Family reunification</li><li>“Visitor” visas for retirees and freelancers</li><li>Family visas</li><li>Spouses of French or EU nationals</li><li>Partners under a civil union (PACS)</li><li>Resident cards (10 years)</li></ul></li><li><strong>Support for all subcategories of the “Talent Passport” residence permit</strong><ul><li>Skilled employee</li><li>Recruitment in an innovative company</li><li>Highly qualified employment</li><li>Employee on assignment</li><li>Researcher</li><li>Business creation</li><li>Innovative project recognized by a public body</li><li>Investor</li><li>Corporate officer</li><li>Artistic and cultural profession</li><li>Person of international renown</li></ul></li><li><strong>Naturalization and Citizenship</strong><ul><li>Applications for naturalization / acquisition of French nationality</li><li>Appeals against postponement or rejection decisions in naturalization applications</li></ul></li><li><strong>Litigation and Appeals</strong><ul><li>Appeals against prefectural postponement/rejection decisions</li><li>Appeals against visa refusals</li></ul></li><li><strong>Consular Relations</strong><ul><li>Procedures with Consulates in France: obtaining certificates of custom, proof of name change, and drafting of legal opinions in family and inheritance law for states with Muslim or mixed legal systems (e.g., Lebanon).</li></ul></li><li><strong>Support for Foreign Entrepreneurs</strong><p>We support foreign entrepreneurs and investors in their business projects in France, whether to start an activity, expand an existing structure, or invest in the French economy. Personalized support is offered for your installation, with follow-up from your arrival in France (connections with chambers of commerce, specialized economic bodies).</p><p><strong>Our support includes:</strong></p><ul><li>Review of your project and guidance towards the most appropriate procedure (entrepreneur visa, Talent Passport, business creator or investor)</li><li>Full preparation of your file: drafting the business plan, financial justifications, proof of activity or investment</li><li>Submission of the application to the competent authorities (consulate or prefecture)</li><li>Monitoring of procedures and communication with relevant administrations (DREETS, Ministry of the Interior, prefectures)</li></ul></li></ol>",
@@ -102,5 +112,11 @@
     "notFound": {
         "title": "Page not found",
         "message": "The page you are looking for does not exist or has moved."
+    },
+    "images": {
+        "portraitAlt": "Sarah Haidar, immigration lawyer in France",
+        "eiffelTowerAlt": "Eiffel Tower, Paris, France",
+        "ladyJusticeAlt": "Lady Justice",
+        "palaisDeJusticeAlt": "Palais de Justice, Paris"
     }
 }

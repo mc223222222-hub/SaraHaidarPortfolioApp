@@ -1,34 +1,44 @@
 {
     "homePage": {
         "secondPage": {
-            "moreAboutMeButtonText": "Plus D'info",
+            "moreAboutMeButtonText": "À propos de Sarah Haidar",
             "aboutMeCardParagraph": "Avocate et docteure en droit public, chargée de travaux dirigés en droit des sociétés, Me Sarah HAIDAR a construit un parcours académique et professionnel qui lui a permis de développer une expertise en matière de lutte contre la corruption et de compliance, avec un intérêt particulier pour les pays arabes, où ces problématiques s’articulent avec des enjeux politiques et économiques majeurs.",
-            "aboutMeCardTitle": "A Propos"
+            "aboutMeCardTitle": "À propos de Sarah Haidar"
         },
         "thirdPage": {
-            "moreExpertiseButtonText": "Plus D'info",
+            "moreExpertiseButtonText": "Voir tous les services",
             "expertiseCardParagraph": "Notre cabinet est entièrement dédié au droit des étrangers et à la mobilité internationale en France. Nous accompagnons tant les particuliers désireux de voyager, de s’installer ou de travailler en France que les entreprises souhaitant recruter ou employer des talents internationaux. Nous couvrons l’ensemble des démarches : demande ou renouvellement de titres de séjour, procédures de régularisation, mobilité professionnelle (salarié, entrepreneur, passeport-talent…), obtention de tous types de visas (entrepreneur, artiste, création d’entreprise, projet innovant) et naturalisation.",
-            "expertiseCardTitle": "Expertises"
+            "expertiseCardTitle": "Droit des étrangers et mobilité internationale",
+            "services": {
+                "familyReunion": "Family reunification",
+                "visaApplications": "Visa applications",
+                "residencePermits": "Residence permits and passports",
+                "businessVisas": "Entrepreneur and business creation visas"
+            }
         },
         "fourthPage": {
-            "morePublicationsButtonText": "Plus D'info",
+            "morePublicationsButtonText": "Lire les publications",
             "publicationsCardParagraph": "Notre cabinet est spécialisé en droit de l'immigration et accompagne les entreprises non résidentes. Nous vous aidons à accomplir toutes les démarches et à respecter la réglementation française.",
             "publicationsCardTitle": "Publications"
         },
         "fifthPage": {
-            "honoraryTitle": "Honoraire",
+            "honoraryTitle": "Honoraires",
             "honoraryContent": "<p>La consultation est au tarif de 150 € TTC.</p><p>En cas de prise en charge de votre dossier, et si je suis en mesure de vous accompagner, ce montant sera déduit du total des honoraires.</p><p>Les honoraires, fixés librement, peuvent être établis sous forme de forfait ou sur la base d’un taux horaire. Ils varient selon la complexité de l’affaire, le temps nécessaire à son traitement et les délais procéduraux.</p><p>Les conditions financières seront définies lors de notre premier rendez-vous. Toute ouverture de dossier donnera lieu à la signature d’une convention d’honoraires.</p>"
+        },
+        "firstPage": {
+            "heroTitle": "Avocat en droit des étrangers en France",
+            "heroSubtitle": "Titres de séjour, visas, passeport talent et naturalisation pour particuliers et entreprises."
         }
     },
     "aboutMePage": {
-        "title": "A Propos",
+        "title": "Sarah Haidar, avocate et docteure en droit public",
         "paragraphOneContent": "Avocate et docteure en droit public, chargée de travaux dirigés en droit des sociétés, Me Sarah HAIDAR a construit un parcours académique et professionnel qui lui a permis de développer une expertise en matière de lutte contre la corruption et de compliance, avec un intérêt particulier pour les pays arabes, où ces problématiques s’articulent avec des enjeux politiques et économiques majeurs. Maîtrisant trois langues, le français, l’anglais et l’arabe, elle accompagne les entrepreneurs étrangers dans leurs démarches depuis l’international, en tenant compte des enjeux culturels, de développement et de rayonnement de leur savoir-faire. Elle intervient également pour le recrutement de salariés étrangers depuis leurs pays d’origine.",
         "paragraphTwoContent": "Ses expériences diversifiées au sein de cabinets d’avocats, d’ONG et d’administrations publiques, en France, au Liban et aux États-Unis, lui ont permis d’adopter une méthode de travail rigoureuse, alliant réactivité, sens de l’écoute et analyse pluridisciplinaire des problématiques juridiques.",
         "paragraphThreeContent": "Me HAIDAR a également acquis une expérience significative en droit des étrangers, notamment depuis l’explosion du port de Beyrouth, période au cours de laquelle elle a été sollicitée pour accompagner des proches dans leurs démarches d’immigration.",
         "paragraphFourContent": "Parallèlement, sa passion pour l’entrepreneuriat l’a conduite à s’intéresser aux entrepreneurs et aux startups. Elle s’attache tout particulièrement à l’accompagnement des étrangers dans leurs démarches de relocation en France, consciente des obstacles administratifs et pratiques auxquels ils peuvent être confrontés. Elle souhaite ainsi mettre ses compétences à leur service afin de faciliter leur installation et de contribuer au développement de leurs activités."
     },
     "areaOfExpertisePage": {
-        "firstPageHeader": "Expertises",
+        "firstPageHeader": "Services en droit des étrangers en France",
         "tabsContent": {
             "immigrationTabTitle": "Droit des étrangers",
             "immigrationTabContent": "<h2>Droit des étrangers</h2><p>Le cabinet intervient auprès des particuliers et des entreprises dans toutes leurs démarches liées à l’entrée et au séjour en France.</p><ol><li><strong>Visas, Titres et régularisation de séjour</strong><ul><li>Demandes et renouvellements de titres de séjour</li><li>Demande d’autorisation de travail</li><li>Régularisation de séjour des étrangers sans papiers (voies classiques et admission exceptionnelle au séjour)</li><li>Accompagnement en préfecture, préparation et suivi des dossiers</li><li>Régularisations au titre des métiers en tension</li><li>Changement de statut</li></ul></li><li><strong>Famille et vie privée</strong><ul><li>Regroupement familial</li><li>Visa « Visiteur » pour les retraités et les freelancers</li><li>Visas familiaux</li><li>Conjoints de Français ou de ressortissants de l’UE</li><li>Partenaires liés par un PACS</li><li>Cartes de résident (10 ans)</li></ul></li><li><strong>Passeport Talent</strong><p>Accompagnement sur l’ensemble des sous-catégories du titre de séjour “Passeport Talent” :</p><ul><li>Salarié qualifié</li><li>Recrutement dans une entreprise innovante</li><li>Emploi hautement qualifié</li><li>Salarié en mission</li><li>Chercheur</li><li>Création d’entreprise</li><li>Projet innovant reconnu par un organisme public</li><li>Investisseur</li><li>Mandataire social</li><li>Profession artistique et culturelle</li><li>Personne de renommée internationale</li></ul></li><li><strong>Naturalisation et nationalité</strong><ul><li>Demandes de naturalisation / acquisition de la nationalité française</li><li>Recours contre les décisions d’ajournement ou de rejet d’une demande de naturalisation</li></ul></li><li><strong>Contentieux et recours</strong><ul><li>Recours contre les décisions d’ajournement/rejet préfectoral</li><li>Recours contre les refus de visa</li></ul></li><li><strong>Relations consulaires</strong><ul><li>Démarches auprès des Consulats en France : obtention de certificats de coutume, attestations de changement de prénom, ainsi que la rédaction d’expertises en droit de la famille et en droit des successions dans des États à législation musulmane ou à régime mixte (Liban).</li></ul></li><li><strong>Accompagnement des entrepreneurs étrangers</strong><p>Nous soutenons les entrepreneurs et investisseurs étrangers dans leurs projets d’implantation en France, que ce soit pour créer une activité, développer une structure déjà existante ou investir dans l’économie française. Un accompagnement personnalisé à votre installation et un suivi dès votre arrivée en France (mise en relation avec les chambres de commerce compétentes, organismes économiques spécialisés).</p><p><strong>Notre accompagnement comprend :</strong></p><ul><li>L’étude de votre projet et l’orientation vers la procédure la plus appropriée (visa entrepreneur, Passeport Talent, créateur d’entreprise ou investisseur)</li><li>La préparation complète de votre dossier : élaboration du business plan, justificatifs financiers, preuves d’activité ou d’investissement</li><li>Le dépôt de la demande auprès des autorités compétentes (consulat ou préfecture)</li><li>Le suivi des démarches et des échanges avec les administrations concernées (DREETS, Ministère de l’Intérieur, préfectures)</li></ul></li></ol>",
@@ -104,5 +114,11 @@
     "notFound": {
         "title": "Page not found",
         "message": "The page you are looking for does not exist or has moved."
+    },
+    "images": {
+        "portraitAlt": "Sarah Haidar, immigration lawyer in France",
+        "eiffelTowerAlt": "Eiffel Tower, Paris, France",
+        "ladyJusticeAlt": "Lady Justice",
+        "palaisDeJusticeAlt": "Palais de Justice, Paris"
     }
 }
