@@ -17,15 +17,15 @@ export const FIRM = {
   legalName: "Sarah Haidar Avocat", // TODO: exact legal name if different
   lawyer: "Sarah Haidar",
   jobTitle: "Avocat, Doctor of Public Law",
-  telephone: "", // TODO e.g. "+33 1 23 45 67 89"
-  email: "", // TODO e.g. "contact@shaidaravocats.com"
+  telephone: "+33 7 65 89 74 54",
+  email: "s.h@shaidaravocats.com",
   address: {
-    streetAddress: "", // TODO
-    addressLocality: "", // TODO e.g. "Paris"
-    postalCode: "", // TODO e.g. "75008"
+    streetAddress: "11, boulevard de Sébastopol, 5e étage",
+    addressLocality: "Paris",
+    postalCode: "75001",
     addressCountry: "FR",
   },
-  bar: "", // TODO e.g. "Barreau de Paris"
+  bar: "", // TODO: bar association, not stated anywhere on the site yet
   bookingUrl: "", // TODO booking link if any
   sameAs: [
     // TODO: add real profile URLs
@@ -34,7 +34,7 @@ export const FIRM = {
   ] as string[],
   languages: ["French", "English", "Arabic"],
   consultationFee: "150 EUR including VAT",
-  ogImage: "/og-image.jpg", // TODO: add a 1200x630 image to /public/og-image.jpg
+  ogImage: "/og-image.jpg", // 1200x630, in /public
 };
 
 export const SERVICES = [
@@ -49,7 +49,6 @@ export const SERVICES = [
 
 export const DEFAULT_DESCRIPTION: Record<Locale, string> = {
   en: "Sarah Haidar, avocat and Doctor of Public Law. Law firm dedicated to immigration law and international mobility in France: residence permits, visas, talent passport, regularization and naturalization for individuals and companies.",
-  // TODO (fr): confirm French wording
   fr: "Sarah Haidar Avocat : titres de séjour, visas, passeport talent et naturalisation pour particuliers et entreprises. Cabinet dédié au droit des étrangers et à la mobilité internationale en France.",
 };
 
@@ -71,7 +70,6 @@ export const PAGES: Record<PageKey, { path: string }> = {
 
 type PageMeta = { title: string; description: string; ogTitle?: string; ogDescription?: string; ogType?: "website" | "profile" };
 
-// French entries marked TODO (fr) reuse the English text until French copy is provided.
 export const PAGE_META: Record<Locale, Record<Exclude<PageKey, "home">, PageMeta>> = {
   en: {
     aboutMe: {
@@ -104,24 +102,25 @@ export const PAGE_META: Record<Locale, Record<Exclude<PageKey, "home">, PageMeta
   },
   fr: {
     aboutMe: {
-      title: "À propos de Sarah Haidar, avocate et docteure en droit public", // assembled from existing fr.json wording, confirm
+      title: "À propos de Sarah Haidar, avocate et docteure en droit public",
       description:
-        "Sarah Haidar is a lawyer, Doctor of Public Law and lecturer in corporate law, practising immigration law in France with expertise in anti-corruption and compliance, with a focus on Arab countries.", // TODO (fr)
+        "Sarah Haidar, avocate et docteure en droit public, enseignante en droit des sociétés. Droit des étrangers en France, lutte anticorruption et conformité, avec une expertise particulière des pays arabes.",
       ogType: "profile",
     },
     areaOfExpertise: {
-      title: "Services en droit des étrangers en France",
+      title: "Services en droit des étrangers en France : titres de séjour, visas, naturalisation",
       description:
-        "Residence permit applications and renewals, regularization, talent passport, entrepreneur, artist and business creation visas, family reunification and French naturalization. For individuals and companies hiring international talent.", // TODO (fr)
+        "Titres de séjour, régularisation, passeport talent, visas entrepreneur, artiste et création d’entreprise, regroupement familial et naturalisation. Pour particuliers et entreprises recrutant des talents internationaux.",
+      ogTitle: "Services en droit des étrangers en France",
     },
     publications: {
-      title: "Publications", // TODO (fr)
+      title: "Publications en droit des étrangers, droit public et conformité",
       description:
-        "Articles and academic publications by Sarah Haidar, Doctor of Public Law, on immigration law, international mobility, anti-corruption and compliance.", // TODO (fr)
+        "Articles et publications académiques de Sarah Haidar, docteure en droit public, sur le droit des étrangers, la mobilité internationale, la lutte anticorruption et la conformité.",
     },
     contact: {
-      title: "Contact Sarah Haidar Avocat",
-      description: "Book a consultation: €150 incl. VAT, deducted from fees if the case is taken on.", // TODO (fr)
+      title: "Contact : Sarah Haidar Avocat",
+      description: "Contactez Sarah Haidar Avocat. Consultation 150 € TTC, déduite des honoraires si le dossier est pris en charge.",
     },
   },
 };
