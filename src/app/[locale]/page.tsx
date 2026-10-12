@@ -4,13 +4,13 @@ import homePageData from "@/data/homePageData.json";
 import { ArrowRight } from '@mui/icons-material';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { localizedPath, isLocale } from '@/lib/seo';
+import { ALT, HIDDEN_H1 } from '@/lib/seo-copy';
 
 export default async function Home() {
 	const t = await getTranslations("homePage")
-	const tImg = await getTranslations("images")
 	const rawLocale = await getLocale()
 	const locale = isLocale(rawLocale) ? rawLocale : 'en'
-	const serviceKeys = ['familyReunion', 'visaApplications', 'residencePermits', 'businessVisas'] as const
+	const alt = ALT[locale]
 	return (
 		<>
 			<div className="homeContent">
@@ -18,7 +18,7 @@ export default async function Home() {
 
 				<div className='page page_firstPage'>
 					<div className="imgContainer">
-						<img src={homePageData.firstPageSrc} alt={tImg('eiffelTowerAlt')} />
+						<img src={homePageData.firstPageSrc} alt={alt.eiffelTower} />
 					</div>
 					<div className='messageOverlayContainer'>
 						{
@@ -31,10 +31,7 @@ export default async function Home() {
 							})
 						}
 					</div>
-					<div className='heroHeading'>
-						<h1>{t('firstPage.heroTitle')}</h1>
-						<p>{t('firstPage.heroSubtitle')}</p>
-					</div>
+					<h1 className='sr-only'>{HIDDEN_H1[locale].home}</h1>
 				</div>
 
 
@@ -42,7 +39,7 @@ export default async function Home() {
 					<div className='flex--row'>
 						<div className='homePage_aboutMe flex--row'>
 							<div className='card'>
-								<h2 className='title'>{t('secondPage.aboutMeCardTitle')}</h2>
+								<p className='title'>{t('secondPage.aboutMeCardTitle')}</p>
 								<div className='cardContent'>
 									{t('secondPage.aboutMeCardParagraph')}
 								</div>
@@ -53,7 +50,7 @@ export default async function Home() {
 							</div>
 						</div>
 						<div className='imgContainer portraitImg sideImgContainer'>
-							<img src={homePageData.secondPage.imgSrc} alt={tImg('portraitAlt')} />
+							<img src={homePageData.secondPage.imgSrc} alt={alt.portrait} />
 						</div>
 					</div>
 				</div>
@@ -63,7 +60,7 @@ export default async function Home() {
 					<div className='card flex--row'>
 						<div className='cardContentContainer'>
 							<div className='expertise'>
-								<h2 className='title'>{t('thirdPage.expertiseCardTitle')}</h2>
+								<p className='title'>{t('thirdPage.expertiseCardTitle')}</p>
 								<div className='cardContent'>
 									{t('thirdPage.expertiseCardParagraph')}
 								</div>
@@ -71,13 +68,9 @@ export default async function Home() {
 							<div className='expertise_icons'>
 								{
 									homePageData.thirdPage.expertisesIcons.map((item, index) => {
-										const label = t('thirdPage.services.' + serviceKeys[index])
 										return (
-											<div key={index} className='expertiseItem'>
-												<div className='imgContainer glassBg sideImgContainer'>
-													<img src={item.src} alt={label} />
-												</div>
-												<h3 className='expertiseLabel'>{label}</h3>
+											<div key={index} className='imgContainer glassBg sideImgContainer'>
+												<img src={item.src} alt={alt.services[index]} />
 											</div>
 										)
 									})
@@ -94,11 +87,11 @@ export default async function Home() {
 				<div className='page page_fourthPage'>
 					<div className='flex--row itemsContainer'>
 						<div className='imgContainer sideImgContainer'>
-							<img src={homePageData.fourthPage.sideImgSrc} alt={tImg('ladyJusticeAlt')} />
+							<img src={homePageData.fourthPage.sideImgSrc} alt={alt.ladyJustice} />
 						</div>
 						<div className='homePage_publications flex--row'>
 							<div className='card'>
-								<h2 className='title'>{t('fourthPage.publicationsCardTitle')}</h2>
+								<p className='title'>{t('fourthPage.publicationsCardTitle')}</p>
 								{/* <div className='cardContent'>
 									{t('fourthPage.publicationsCardParagraph')}
 								</div> */}
@@ -114,7 +107,7 @@ export default async function Home() {
 				<div className='page page_fifthPage'>
 					<div className='homePage_honorary flex--row'>
 						<div className='card'>
-							<h2 className='title'>{t('fifthPage.honoraryTitle')}</h2>
+							<p className='title'>{t('fifthPage.honoraryTitle')}</p>
 							<div className='cardContent'>
 								{t.rich('fifthPage.honoraryContent', {
 									p: (chunks) => <p>{chunks}</p>
