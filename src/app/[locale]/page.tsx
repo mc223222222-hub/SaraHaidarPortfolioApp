@@ -31,10 +31,7 @@ export default async function Home() {
 							})
 						}
 					</div>
-					<div className='heroHeading'>
-						<h1>{t('firstPage.heroTitle')}</h1>
-						<p>{t('firstPage.heroSubtitle')}</p>
-					</div>
+					<h1 className='sr-only'>{t('firstPage.heroTitle')}</h1>
 				</div>
 
 
@@ -71,13 +68,9 @@ export default async function Home() {
 							<div className='expertise_icons'>
 								{
 									homePageData.thirdPage.expertisesIcons.map((item, index) => {
-										const label = t('thirdPage.services.' + serviceKeys[index])
 										return (
-											<div key={index} className='expertiseItem'>
-												<div className='imgContainer glassBg sideImgContainer'>
-													<img src={item.src} alt={label} />
-												</div>
-												<h3 className='expertiseLabel'>{label}</h3>
+											<div key={index} className='imgContainer glassBg sideImgContainer'>
+												<img src={item.src} alt={t('thirdPage.services.' + serviceKeys[index])} />
 											</div>
 										)
 									})
