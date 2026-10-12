@@ -1,14 +1,14 @@
 {
     "homePage": {
         "secondPage": {
-            "moreAboutMeButtonText": "À propos de Sarah Haidar",
+            "moreAboutMeButtonText": "Plus D'info",
             "aboutMeCardParagraph": "Avocate et docteure en droit public, chargée de travaux dirigés en droit des sociétés, Me Sarah HAIDAR a construit un parcours académique et professionnel qui lui a permis de développer une expertise en matière de lutte contre la corruption et de compliance, avec un intérêt particulier pour les pays arabes, où ces problématiques s’articulent avec des enjeux politiques et économiques majeurs.",
-            "aboutMeCardTitle": "À propos de Sarah Haidar"
+            "aboutMeCardTitle": "A Propos"
         },
         "thirdPage": {
-            "moreExpertiseButtonText": "Voir tous les services",
+            "moreExpertiseButtonText": "Plus D'info",
             "expertiseCardParagraph": "Notre cabinet est entièrement dédié au droit des étrangers et à la mobilité internationale en France. Nous accompagnons tant les particuliers désireux de voyager, de s’installer ou de travailler en France que les entreprises souhaitant recruter ou employer des talents internationaux. Nous couvrons l’ensemble des démarches : demande ou renouvellement de titres de séjour, procédures de régularisation, mobilité professionnelle (salarié, entrepreneur, passeport-talent…), obtention de tous types de visas (entrepreneur, artiste, création d’entreprise, projet innovant) et naturalisation.",
-            "expertiseCardTitle": "Droit des étrangers et mobilité internationale",
+            "expertiseCardTitle": "Expertises",
             "services": {
                 "familyReunion": "Regroupement familial",
                 "visaApplications": "Demandes de visa",
@@ -17,17 +17,16 @@
             }
         },
         "fourthPage": {
-            "morePublicationsButtonText": "Lire les publications",
+            "morePublicationsButtonText": "Plus D'info",
             "publicationsCardParagraph": "Notre cabinet est spécialisé en droit de l'immigration et accompagne les entreprises non résidentes. Nous vous aidons à accomplir toutes les démarches et à respecter la réglementation française.",
             "publicationsCardTitle": "Publications"
         },
         "fifthPage": {
-            "honoraryTitle": "Honoraires",
+            "honoraryTitle": "Honoraire",
             "honoraryContent": "<p>La consultation est au tarif de 150 € TTC.</p><p>En cas de prise en charge de votre dossier, et si je suis en mesure de vous accompagner, ce montant sera déduit du total des honoraires.</p><p>Les honoraires, fixés librement, peuvent être établis sous forme de forfait ou sur la base d’un taux horaire. Ils varient selon la complexité de l’affaire, le temps nécessaire à son traitement et les délais procéduraux.</p><p>Les conditions financières seront définies lors de notre premier rendez-vous. Toute ouverture de dossier donnera lieu à la signature d’une convention d’honoraires.</p>"
         },
         "firstPage": {
-            "heroTitle": "Avocat en droit des étrangers en France",
-            "heroSubtitle": "Titres de séjour, visas, passeport talent et naturalisation pour particuliers et entreprises."
+            "heroTitle": "Avocat en droit des étrangers en France"
         }
     },
     "aboutMePage": {

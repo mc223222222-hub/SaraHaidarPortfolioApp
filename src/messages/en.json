@@ -1,14 +1,14 @@
 {
     "homePage": {
         "secondPage": {
-            "moreAboutMeButtonText": "About Sarah Haidar",
+            "moreAboutMeButtonText": "More Info",
             "aboutMeCardParagraph": "Lawyer, Doctor of Public Law, and lecturer in corporate law. My academic and professional background has allowed me to develop expertise in anti-corruption and compliance, with a particular focus on Arab countries, where these issues intertwine with major political and economic dimensions.",
-            "aboutMeCardTitle": "About Sarah Haidar"
+            "aboutMeCardTitle": "About Me"
         },
         "thirdPage": {
-            "moreExpertiseButtonText": "See all immigration services",
+            "moreExpertiseButtonText": "More Info",
             "expertiseCardParagraph": "Our firm is entirely dedicated to immigration law and international mobility in France. We assist both individuals wishing to travel, settle, or work in France, and companies looking to recruit or employ international talent. We handle all procedures: applications or renewals of residence permits, regularization processes, professional mobility (employee, entrepreneur, talent passport, etc.), obtaining all types of visas (entrepreneur, artist, business creation, innovative project), and naturalization.",
-            "expertiseCardTitle": "Immigration and International Mobility Services",
+            "expertiseCardTitle": "Expertises",
             "services": {
                 "familyReunion": "Family reunification",
                 "visaApplications": "Visa applications",
@@ -17,16 +17,15 @@
             }
         },
         "fourthPage": {
-            "morePublicationsButtonText": "Read the publications",
+            "morePublicationsButtonText": "More Info",
             "publicationsCardTitle": "Publications"
         },
         "fifthPage": {
-            "honoraryTitle": "Consultation Fee",
+            "honoraryTitle": "Honorary",
             "honoraryContent": "<p>The consultation fee is €150 including VAT.</p><p>If I take on your case and am able to assist you, this amount will be deducted from the total fees.</p><p>Lawyer fees in France are freely determined, and may be established either as a flat fee or on the basis of an hourly rate. They vary depending on the complexity of the case, the time required for its handling, and procedural deadlines.</p><p>The financial terms will be defined during our first meeting. Any opening of a case will require the signing of a fee agreement.</p>"
         },
         "firstPage": {
-            "heroTitle": "Immigration Lawyer in France",
-            "heroSubtitle": "Residence permits, visas, talent passport and naturalization for individuals and companies."
+            "heroTitle": "Immigration Lawyer in France"
         }
     },
     "aboutMePage": {
