@@ -146,10 +146,22 @@ export function languageAlternates(path: string): Record<string, string> {
   };
 }
 
+// Share image used by every page. Next.js replaces (does not merge) a parent's openGraph/twitter
+// objects when a page defines its own, so each page must carry the image and its own twitter card.
+export const OG_IMAGES = [
+  { url: FIRM.ogImage, width: 1200, height: 630, alt: "Sarah Haidar, immigration lawyer in France" },
+];
+
+export function twitterCard(title: string, description: string): NonNullable<Metadata["twitter"]> {
+  return { card: "summary_large_image", title, description, images: [FIRM.ogImage] };
+}
+
 // Builds the metadata for a section page (used by the per-page layout.tsx files).
 export function buildPageMetadata(locale: Locale, page: Exclude<PageKey, "home">): Metadata {
   const meta = PAGE_META[locale][page];
   const path = PAGES[page].path;
+  const ogTitle = meta.ogTitle ?? meta.title;
+  const ogDescription = meta.ogDescription ?? meta.description;
   return {
     title: meta.title,
     description: meta.description,
@@ -158,11 +170,14 @@ export function buildPageMetadata(locale: Locale, page: Exclude<PageKey, "home">
       languages: languageAlternates(path),
     },
     openGraph: {
-      title: meta.ogTitle ?? meta.title,
-      description: meta.ogDescription ?? meta.description,
+      title: ogTitle,
+      description: ogDescription,
       url: localizedPath(locale, path),
+      siteName: SITE_NAME,
       type: meta.ogType ?? "website",
       locale: OG_LOCALE[locale],
+      images: OG_IMAGES,
     },
+    twitter: twitterCard(ogTitle, ogDescription),
   };
 }
