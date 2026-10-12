@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { findPublication, getPublicationCopy, releaseDateIso } from "@/lib/publications";
-import { FIRM, OG_LOCALE, SITE_URL, isLocale, languageAlternates, localizedPath, localizedUrl, type Locale } from "@/lib/seo";
+import { FIRM, OG_IMAGES, OG_LOCALE, SITE_NAME, SITE_URL, isLocale, languageAlternates, localizedPath, localizedUrl, twitterCard, type Locale } from "@/lib/seo";
 
 type Params = Promise<{ locale: string; slug: string }>;
 
@@ -26,11 +26,14 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       title,
       description,
       url: localizedPath(locale, path),
+      siteName: SITE_NAME,
       type: "article",
       locale: OG_LOCALE[locale],
       publishedTime: releaseDateIso(pub.releaseDate),
       authors: [FIRM.lawyer],
+      images: OG_IMAGES,
     },
+    twitter: twitterCard(title, description),
   };
 }
 
