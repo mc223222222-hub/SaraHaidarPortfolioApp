@@ -2,7 +2,9 @@
 
 import './page.scss';
 import jsonData from '../../../data/areaOfExpertiseData.json';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
+import { isLocale } from '@/lib/seo';
+import { ALT, HIDDEN_H1 } from '@/lib/seo-copy';
 import { Box, Tab, Tabs } from '@mui/material';
 import React from 'react';
 
@@ -38,7 +40,8 @@ function a11yProps(index: number) {
 
 export default function AreaOfExpertise() {
     const t = useTranslations("areaOfExpertisePage")
-    const tImg = useTranslations("images")
+    const rawLocale = useLocale()
+    const locale = isLocale(rawLocale) ? rawLocale : 'en'
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -50,9 +53,10 @@ export default function AreaOfExpertise() {
             <div className='areaOfExpertisePage'>
                 <div className='introPage page'>
                     <div className='imgContainer'>
-                        <img src={jsonData.patternImgSrc} alt={tImg('palaisDeJusticeAlt')} />
+                        <img src={jsonData.patternImgSrc} alt={ALT[locale].palaisDeJustice} />
                     </div>
-                    <h1 className='header glassBg'>{t('firstPageHeader')}</h1>
+                    <h1 className='sr-only'>{HIDDEN_H1[locale].areaOfExpertise}</h1>
+                    <p className='header glassBg'>{t('firstPageHeader')}</p>
                 </div>
                 <div className='contentPage page'>
                     <Box sx={{ width: '100%' }}>

@@ -5,7 +5,9 @@ import "./page.scss";
 import React, { useState } from "react";
 import { Button, TextField } from "@mui/material";
 import jsonData from "../../../data/contactData.json";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { isLocale } from "@/lib/seo";
+import { ALT } from "@/lib/seo-copy";
 import { SendEmail } from "@/app/actions"
 
 interface formValuesObject {
@@ -16,7 +18,8 @@ interface formValuesObject {
 export default function Contact() {
     const data: any = jsonData;
     const t = useTranslations("contactPage")
-    const tImg = useTranslations("images")
+    const rawLocale = useLocale()
+    const locale = isLocale(rawLocale) ? rawLocale : 'en'
     const formsDataInitialState = Object.keys(data.formSection.forms).reduce((stateObj, key) => {
         stateObj[key] = {
             value: "",
@@ -130,7 +133,7 @@ export default function Contact() {
                 </Box>
             </div>
             <div className="imgContainer">
-                <img src={jsonData.sideImgSrc} alt={tImg('portraitAlt')} />
+                <img src={jsonData.sideImgSrc} alt={ALT[locale].portrait} />
             </div>
         </div>
     </>

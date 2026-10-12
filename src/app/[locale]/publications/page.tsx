@@ -4,6 +4,7 @@ import './page.scss'
 import jsonData from '../../../data/publicationsData.json';
 import { useLocale, useTranslations } from 'next-intl';
 import { localizedPath, isLocale } from '@/lib/seo';
+import { HIDDEN_H1 } from '@/lib/seo-copy';
 import { Button, Chip, IconButton } from '@mui/material';
 import { KeyboardDoubleArrowRightRounded } from '@mui/icons-material';
 
@@ -22,9 +23,10 @@ export default function Publications() {
         <>
             <div className='publicationsPage'>
                 <div className='titleContainer'>
-                    <h1>
+                    <h1 className='sr-only'>{HIDDEN_H1[locale].publications}</h1>
+                    <p>
                         {t(jsonData.publicationsPageHeaderKey)}
-                    </h1>
+                    </p>
                 </div>
                 <div className='publicationsContainer'>
                     {

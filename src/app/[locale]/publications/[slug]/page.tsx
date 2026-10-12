@@ -16,13 +16,12 @@ export default function PublicationPage() {
     const locale = isLocale(rawLocale) ? rawLocale : 'en'
     const pubData = jsonData.content.find(item => item.slug == slug)
     const pubContentKey = pubData?.contentKey
-    // The article body opens with its own title as <h2>; render that first heading as the page's H1.
-    let headingCount = 0
 
     return (
         <>
             <div className="singlePubPage">
                 <div className="publication">
+                    {pubData ? <h1 className="sr-only">{t('content.' + pubData.previewTitleKey)}</h1> : null}
                     {
                         pubContentKey ?
                             t.rich('content.' + pubContentKey,
@@ -31,7 +30,7 @@ export default function PublicationPage() {
                                     ul: (chunks) => <ul>{chunks}</ul>,
                                     li: (chunks) => <li>{chunks}</li>,
                                     strong: (chunks) => <strong>{chunks}</strong>,
-                                    h2: (chunks) => headingCount++ === 0 ? <h1 className='title'>{chunks}</h1> : <h2 className='title'>{chunks}</h2>,
+                                    h2: (chunks) => <h2 className='title'>{chunks}</h2>,
                                     h3: (chunks) => <h3 className='title'>{chunks}</h3>,
                                     p: (chunks) => <p>{chunks}</p>
                                 }
