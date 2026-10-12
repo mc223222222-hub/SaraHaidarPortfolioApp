@@ -7,17 +7,18 @@ import JsonParagraphsDataFormatService from "@/services/JsonParagraphsHelper";
 
 export default function AboutMe() {
     const t = useTranslations("aboutMePage")
+    const tImg = useTranslations("images")
     let numberedListItemCounterObj = { index: 1 };
     return (
         <>
             <div className="aboutMePage page">
                 <div className="flex--col titleImgContainer">
                     <div className="imgContainer">
-                        <img src={jsonData.portraitImgSrc} />
+                        <img src={jsonData.portraitImgSrc} alt={tImg('portraitAlt')} />
                     </div>
                 </div>
                 <div className="aboutMeContent">
-                    <p className="title">{t('title')}</p>
+                    <h1 className="title">{t('title')}</h1>
                     <div className="textContent">
                         {
                             jsonData.textContent.map((item, index) => {
