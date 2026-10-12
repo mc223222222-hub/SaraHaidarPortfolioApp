@@ -3,10 +3,10 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { type Locale, isLocale, localizedPath } from "@/lib/seo";
 
 // Root 404 (unknown URLs such as /en/random-page). Lives next to the root layout so Next.js uses it for unmatched routes.
-export const metadata: Metadata = {
-  title: "Page not found",
-  robots: { index: false, follow: false },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("notFound");
+  return { title: t("title"), robots: { index: false, follow: false } };
+}
 
 export default async function NotFound() {
   const rawLocale = await getLocale();
