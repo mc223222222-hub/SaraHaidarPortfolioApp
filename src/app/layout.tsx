@@ -9,7 +9,6 @@ import { getLocale, setRequestLocale } from "next-intl/server";
 import Navbar from "./components/navbar/navbar";
 import Script from "next/script";
 import JsonLd from "@/components/JsonLd";
-import SiteFooter from "@/components/SiteFooter";
 import {
 	DEFAULT_DESCRIPTION,
 	DEFAULT_TITLE,
@@ -118,7 +117,6 @@ export default async function RootLayout({
 					<Navbar></Navbar>
 					{children}
 					<JsonLd locale={locale} />
-					<SiteFooter />
 				</NextIntlClientProvider>
 			</body>
 			<Script async src={"https://www.googletagmanager.com/gtag/js?id=" + process.env.NEXT_PUBLIC_GOOGLE_TAG_ID}></Script>
