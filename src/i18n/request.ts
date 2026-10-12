@@ -1,12 +1,12 @@
 import { getRequestConfig } from 'next-intl/server';
-import { cookies } from 'next/headers';
+import { hasLocale } from 'next-intl';
+import { routing } from './routing';
 
-export default getRequestConfig(async () => {
-
-  const store = await cookies();
-  const locale = store.get('locale')?.value || 'en';
-  console.log('cookie store : ' + store)
-  console.log('locale : ' + locale)
+// The locale now comes from the URL segment (/en/..., /fr/...) set by the middleware,
+// not from a cookie, so /fr/... really serves fr.json.
+export default getRequestConfig(async ({ requestLocale }) => {
+  const requested = await requestLocale;
+  const locale = hasLocale(routing.locales, requested) ? requested : routing.defaultLocale;
 
   return {
     locale,
