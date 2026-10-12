@@ -39,13 +39,13 @@ export default async function SiteFooter() {
             {hasAddress && (
               <li>{address.streetAddress}, {address.postalCode} {address.addressLocality}, France</li>
             )}
-            <li>{t("consultationFee")}: {FIRM.consultationFee}</li>
+            <li>{t("feeLine")}</li>
             {FIRM.bookingUrl && <li><a href={FIRM.bookingUrl}>{t("bookConsultation")}</a></li>}
           </ul>
         </address>
       </div>
       <p style={{ textAlign: "center", marginTop: 32, color: "#666" }}>
-        © {new Date().getFullYear()} {FIRM.name}. {t("languages")}: {FIRM.languages.join(", ")}.
+        © {new Date().getFullYear()} {FIRM.name}. {t("languagesLine")}
       </p>
     </footer>
   );
