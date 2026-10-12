@@ -2,7 +2,8 @@
 
 import './page.scss'
 import jsonData from '../../../data/publicationsData.json';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
+import { localizedPath, isLocale } from '@/lib/seo';
 import { Button, Chip, IconButton } from '@mui/material';
 import { KeyboardDoubleArrowRightRounded } from '@mui/icons-material';
 
@@ -14,14 +15,16 @@ export const PublicationCategoryColor: Record<string, string> = {
 
 export default function Publications() {
     const t = useTranslations('publicationsPage')
+    const rawLocale = useLocale()
+    const locale = isLocale(rawLocale) ? rawLocale : 'en'
 
     return (
         <>
             <div className='publicationsPage'>
                 <div className='titleContainer'>
-                    <p>
+                    <h1>
                         {t(jsonData.publicationsPageHeaderKey)}
-                    </p>
+                    </h1>
                 </div>
                 <div className='publicationsContainer'>
                     {
@@ -33,7 +36,7 @@ export default function Publications() {
                                         <Chip sx={{ color: "white", backgroundColor: PublicationCategoryColor[item.contentCategory] }} size='small' label={t(item.contentCategory)} />
                                     </div>
                                     <p className='teaserContent'>{t('content.' + item.previewContentKey)}</p>
-                                    <IconButton size='small' href={`/publications/${item.slug}?id=${index}`}>
+                                    <IconButton size='small' href={localizedPath(locale, `/publications/${item.slug}`)}>
                                         <KeyboardDoubleArrowRightRounded />
                                     </IconButton>
                                 </div>
