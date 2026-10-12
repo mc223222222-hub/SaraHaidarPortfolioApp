@@ -373,6 +373,19 @@
             }
         }
 
+        .page_thirdPage {
+            .card {
+                .title {
+                    font-size: 2.25rem;
+                    line-height: 1.1;
+                }
+
+                .cardContent {
+                    line-height: 1.8;
+                }
+            }
+        }
+
         .sideImgContainer {
             display: none;
         }
