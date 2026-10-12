@@ -16,6 +16,7 @@ interface formValuesObject {
 export default function Contact() {
     const data: any = jsonData;
     const t = useTranslations("contactPage")
+    const tImg = useTranslations("images")
     const formsDataInitialState = Object.keys(data.formSection.forms).reduce((stateObj, key) => {
         stateObj[key] = {
             value: "",
@@ -129,7 +130,7 @@ export default function Contact() {
                 </Box>
             </div>
             <div className="imgContainer">
-                <img src={jsonData.sideImgSrc} />
+                <img src={jsonData.sideImgSrc} alt={tImg('portraitAlt')} />
             </div>
         </div>
     </>

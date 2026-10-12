@@ -6,7 +6,8 @@
     .titleContainer {
         padding: 1rem;
 
-        p {
+        p,
+        h1 {
             font-size: 6rem;
             font-family: 'Vladimir Script', 'Brush Script MT', 'Roboto';
             white-space: nowrap;
@@ -70,7 +71,8 @@
 @media (max-width: 800px) {
     .publicationsPage {
         .titleContainer {
-            p {
+            p,
+            h1 {
                 font-size: 4.5rem;
             }
         }
@@ -80,7 +82,8 @@
 @media (max-width: 350px) {
     .publicationsPage {
         .titleContainer {
-            p {
+            p,
+            h1 {
                 font-size: 3.5rem;
             }
         }

@@ -38,6 +38,7 @@ function a11yProps(index: number) {
 
 export default function AreaOfExpertise() {
     const t = useTranslations("areaOfExpertisePage")
+    const tImg = useTranslations("images")
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -49,9 +50,9 @@ export default function AreaOfExpertise() {
             <div className='areaOfExpertisePage'>
                 <div className='introPage page'>
                     <div className='imgContainer'>
-                        <img src={jsonData.patternImgSrc} />
+                        <img src={jsonData.patternImgSrc} alt={tImg('palaisDeJusticeAlt')} />
                     </div>
-                    <p className='header glassBg'>{t('firstPageHeader')}</p>
+                    <h1 className='header glassBg'>{t('firstPageHeader')}</h1>
                 </div>
                 <div className='contentPage page'>
                     <Box sx={{ width: '100%' }}>

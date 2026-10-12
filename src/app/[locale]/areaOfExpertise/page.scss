@@ -29,10 +29,13 @@
 
         .header {
             color: goldenrod;
-            white-space: nowrap;
+            white-space: normal;
+            text-align: center;
+            line-height: 1.1;
+            max-width: 90%;
             padding: 2rem;
             font-family: 'Vladimir Script', 'Brush Script MT';
-            font-size: 10rem;
+            font-size: 4.5rem;
             font-weight: bold;
             position: absolute;
             top: 50%;
@@ -104,7 +107,7 @@
     .areaOfExpertisePage {
         .introPage {
             .header {
-                font-size: 7rem;
+                font-size: 5rem;
             }
         }
     }
