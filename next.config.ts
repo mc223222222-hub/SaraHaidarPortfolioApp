@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
                 destination: "https://www.shaidaravocats.com/:path*",
                 permanent: true,
             },
+            { source: "/", missing: [{ type: "header", key: "accept-language" }], destination: "/en", permanent: true },
         ];
     },
 };
