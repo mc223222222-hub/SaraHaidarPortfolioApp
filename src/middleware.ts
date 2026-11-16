@@ -10,6 +10,10 @@ const intlMiddleware = createMiddleware(routing);
 const LEGACY_PUBLICATION = /^\/publications\/([a-z0-9-]+)\/?$/;
 
 export default function middleware(request: NextRequest) {
+  // The site has no iOS app. Answer 404 directly instead of redirecting through /en/...
+  if (request.nextUrl.pathname === '/apple-app-site-association') {
+    return new NextResponse('Not found', { status: 404 });
+  }
   const match = LEGACY_PUBLICATION.exec(request.nextUrl.pathname);
   if (match) {
     const url = request.nextUrl.clone();
@@ -23,7 +27,6 @@ export default function middleware(request: NextRequest) {
 export const config = {
   // Match all pathnames except for
   // - … if they start with `/api`, `/trpc`, `/_next` or `/_vercel`
-  // - … /apple-app-site-association (the site has no iOS app: answer 404 directly, no locale redirect)
   // - … the ones containing a dot (e.g. `favicon.ico`)
-  matcher: '/((?!api|trpc|_next|_vercel|apple-app-site-association|.*\\..*).*)'
+  matcher: '/((?!api|trpc|_next|_vercel|.*\\..*).*)'
 };
