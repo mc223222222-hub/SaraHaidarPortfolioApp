@@ -40,12 +40,30 @@ export function descriptionFromHtml(html: string, max = 155): string {
   return trimToLength(text, max);
 }
 
+// Search-result title and description for articles whose default ones (preview title, first
+// paragraph) under-perform. SEO only: never shown on the page itself.
+const SEO_OVERRIDES: Record<string, Partial<Record<Locale, { title: string; description: string }>>> = {
+  "seasonal-employee-visa": {
+    fr: {
+      title: "Travailleur saisonnier en France : un cadre strict",
+      description:
+        "Carte « travailleur saisonnier » : six mois de travail par an, pas de résidence permanente, nouvelle autorisation à chaque contrat. Les difficultés du dispositif.",
+    },
+    en: {
+      title: "Seasonal worker card in France: a strict framework",
+      description:
+        "Seasonal worker card: up to six months of work a year, no permanent residence, new work authorization for each contract. The difficulties of the scheme.",
+    },
+  },
+};
+
 export async function getPublicationCopy(locale: Locale, pub: Publication) {
+  const override = SEO_OVERRIDES[pub.slug]?.[locale];
   const t = await getTranslations({ locale, namespace: "publicationsPage" });
   const html = t.raw(`content.${pub.contentKey}`) as string;
   return {
-    title: t(`content.${pub.previewTitleKey}`),
-    description: descriptionFromHtml(html),
+    title: override?.title ?? t(`content.${pub.previewTitleKey}`),
+    description: override?.description ?? descriptionFromHtml(html),
     category: t(pub.contentCategory),
   };
 }

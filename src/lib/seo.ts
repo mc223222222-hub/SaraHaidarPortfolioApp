@@ -69,16 +69,17 @@ export const PAGES: Record<PageKey, { path: string }> = {
   contact: { path: "/contact" },
 };
 
-type PageMeta = { title: string; description: string; ogTitle?: string; ogDescription?: string; ogType?: "website" | "profile" };
+type PageMeta = { title: string; titleAbsolute?: boolean; description: string; ogTitle?: string; ogDescription?: string; ogType?: "website" | "profile" };
 
 export const PAGE_META: Record<Locale, Record<Exclude<PageKey, "home">, PageMeta>> = {
   en: {
     aboutMe: {
-      title: "About Sarah Haidar, Avocat and Doctor of Public Law",
+      title: "Sarah Haidar, Immigration Lawyer in Paris | Doctor of Public Law",
+      titleAbsolute: true,
       description:
-        "Sarah Haidar is a lawyer, Doctor of Public Law and lecturer in corporate law, practising immigration law in France with expertise in anti-corruption and compliance, with a focus on Arab countries.",
+        "Sarah Haidar, avocat in Paris and Doctor of Public Law. Immigration law in France: residence permits, talent passport, naturalization, plus anti-corruption and compliance.",
       ogDescription:
-        "Lawyer, Doctor of Public Law and lecturer in corporate law. Immigration law in France, anti-corruption and compliance.",
+        "Lawyer in Paris, Doctor of Public Law and lecturer in corporate law. Immigration law in France, anti-corruption and compliance.",
       ogType: "profile",
     },
     areaOfExpertise: {
@@ -164,7 +165,7 @@ export function buildPageMetadata(locale: Locale, page: Exclude<PageKey, "home">
   const ogTitle = meta.ogTitle ?? meta.title;
   const ogDescription = meta.ogDescription ?? meta.description;
   return {
-    title: meta.title,
+    title: meta.titleAbsolute ? { absolute: meta.title } : meta.title,
     description: meta.description,
     alternates: {
       canonical: localizedPath(locale, path),

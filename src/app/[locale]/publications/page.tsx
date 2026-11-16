@@ -38,7 +38,7 @@ export default function Publications() {
                                         <Chip sx={{ color: "white", backgroundColor: PublicationCategoryColor[item.contentCategory] }} size='small' label={t(item.contentCategory)} />
                                     </div>
                                     <p className='teaserContent'>{t('content.' + item.previewContentKey)}</p>
-                                    <IconButton size='small' href={localizedPath(locale, `/publications/${item.slug}`)}>
+                                    <IconButton size='small' href={localizedPath(locale, `/publications/${item.slug}`)} aria-label={t('content.' + item.previewTitleKey)}>
                                         <KeyboardDoubleArrowRightRounded />
                                     </IconButton>
                                 </div>
