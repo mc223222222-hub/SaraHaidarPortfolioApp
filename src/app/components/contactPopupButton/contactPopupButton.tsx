@@ -1,7 +1,7 @@
 import './contactPopupButton.scss';
 import React, { useState } from "react";
 import { Button, Popover, Typography } from "@mui/material";
-import { AlternateEmail, Call, LocationPin, Person } from "@mui/icons-material";
+import { AlternateEmail, Call, Instagram, LocationPin, Person } from "@mui/icons-material";
 import { getLocaleSwitcherButtonStyle } from "@/styles/mainTheme";
 import jsonData from "@/data/contactPopupButton.json";
 
@@ -18,6 +18,10 @@ const ContactPopupButton: React.FC = () => {
 
     const handleLocationClick = () => {
         window.open(jsonData.locationGoogleMapsLink, '_blank')
+    }
+
+    const handleInstagramClick = () => {
+        window.open(jsonData.instagramUrl, '_blank', 'noopener,noreferrer')
     }
 
     const open = Boolean(anchorEl);
@@ -62,6 +66,10 @@ const ContactPopupButton: React.FC = () => {
                     <div className='contactButtonPopupContent_item location' onClick={handleLocationClick}>
                         <LocationPin />
                         <p>{jsonData.location}</p>
+                    </div>
+                    <div className='contactButtonPopupContent_item location' onClick={handleInstagramClick}>
+                        <Instagram />
+                        <p>{jsonData.instagramHandle}</p>
                     </div>
                 </div>
             </Popover>
