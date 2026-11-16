@@ -12,6 +12,7 @@ import { useMediaQuery } from '@/services/mediaQueryHook';
 import React from 'react';
 import { Inbox, Mail, Menu } from '@mui/icons-material';
 import ContactPopupButton from '../contactPopupButton/contactPopupButton';
+import InstagramButton from '../instagramButton/instagramButton';
 
 export default function Navbar() {
     const t = useTranslations("navbar");
@@ -57,6 +58,7 @@ export default function Navbar() {
                             </Drawer>
                         </div>
                 }
+                <InstagramButton></InstagramButton>
                 <ContactPopupButton></ContactPopupButton>
                 <LocaleSwitcher></LocaleSwitcher>
             </div>

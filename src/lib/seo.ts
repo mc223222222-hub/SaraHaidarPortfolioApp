@@ -28,7 +28,8 @@ export const FIRM = {
   bar: "", // TODO: bar association, not stated anywhere on the site yet
   bookingUrl: "", // TODO booking link if any
   sameAs: [
-    // TODO: add real profile URLs
+    "https://www.instagram.com/sarahaidaravocat/",
+    // TODO: add the other official profiles (LinkedIn, bar directory)
     // "https://www.linkedin.com/in/...",
     // "https://www.avocat.fr/...",
   ] as string[],
