@@ -25,7 +25,8 @@ export const FIRM = {
     postalCode: "75001",
     addressCountry: "FR",
   },
-  bar: "", // TODO: bar association, not stated anywhere on the site yet
+  bar: "Barreau de Paris", // listed by Doctrine and bar directories; Sarah to confirm
+  portrait: "/images/portrait_5b_transparentBg.png",
   bookingUrl: "", // TODO booking link if any
   sameAs: [
     "https://www.instagram.com/sarahaidaravocat/",
