@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { findPublication, getPublicationCopy, releaseDateIso } from "@/lib/publications";
+import { extractFaq, findPublication, getArticleHtml, getPublicationCopy, releaseDateIso, wordCount } from "@/lib/publications";
 import { FIRM, OG_IMAGES, OG_LOCALE, SITE_NAME, SITE_URL, isLocale, languageAlternates, localizedPath, localizedUrl, twitterCard, type Locale } from "@/lib/seo";
 
 type Params = Promise<{ locale: string; slug: string }>;
@@ -55,16 +55,47 @@ export default async function Layout({ children, params }: { children: React.Rea
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     inLanguage: locale,
     datePublished: releaseDateIso(pub.releaseDate),
+    dateModified: releaseDateIso(pub.releaseDate),
+    wordCount: wordCount(getArticleHtml(locale, pub)),
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    about: { "@type": "Thing", name: category },
     articleSection: category,
     image: `${SITE_URL}${FIRM.ogImage}`,
     author: { "@type": "Person", "@id": `${SITE_URL}/#sarah-haidar`, name: FIRM.lawyer, url: localizedUrl("en", "/aboutMe") },
     publisher: { "@id": `${SITE_URL}/#firm` },
   };
 
+  const faq = extractFaq(getArticleHtml(locale, pub));
+  const faqSchema = faq.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": `${url}#faq`,
+        inLanguage: locale,
+        mainEntity: faq.map((f) => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: { "@type": "Answer", text: f.answer },
+        })),
+      }
+    : null;
+
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: SITE_NAME, item: localizedUrl(locale, "") },
+      { "@type": "ListItem", position: 2, name: "Publications", item: localizedUrl(locale, "/publications") },
+      { "@type": "ListItem", position: 3, name: title, item: url },
+    ],
+  };
+
   return (
     <>
       {children}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      {faqSchema ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} /> : null}
     </>
   );
 }

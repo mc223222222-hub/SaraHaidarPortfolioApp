@@ -1,6 +1,8 @@
 import { getTranslations } from "next-intl/server";
 import publicationsData from "@/data/publicationsData.json";
 import { type Locale } from "@/lib/seo";
+import messagesEn from "@/messages/en.json";
+import messagesFr from "@/messages/fr.json";
 
 export type Publication = (typeof publicationsData.content)[number];
 
@@ -18,9 +20,72 @@ function stripTags(html: string): string {
   return html
     .replace(/<[^>]+>/g, " ")
     .replace(/&nbsp;/g, " ")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
     .replace(/&amp;/g, "&")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+// Raw article HTML straight from the message files (no request context needed, so it also works in route handlers).
+export function getArticleHtml(locale: Locale, pub: Publication): string {
+  const messages = (locale === "fr" ? messagesFr : messagesEn) as unknown as {
+    publicationsPage: { content: Record<string, string> };
+  };
+  return messages.publicationsPage.content[pub.contentKey] ?? "";
+}
+
+export function getArticleTitle(locale: Locale, pub: Publication): string {
+  const messages = (locale === "fr" ? messagesFr : messagesEn) as unknown as {
+    publicationsPage: { content: Record<string, string> };
+  };
+  return messages.publicationsPage.content[pub.previewTitleKey] ?? pub.slug;
+}
+
+export function wordCount(html: string): number {
+  const text = stripTags(html);
+  return text ? text.split(" ").length : 0;
+}
+
+// Plain markdown version of an article body, for llms-full.txt.
+export function htmlToMarkdown(html: string): string {
+  return html
+    .replace(/<h2[^>]*>([\s\S]*?)<\/h2>/g, (_, t) => `\n\n## ${stripTags(t)}\n\n`)
+    .replace(/<h3[^>]*>([\s\S]*?)<\/h3>/g, (_, t) => `\n\n### ${stripTags(t)}\n\n`)
+    .replace(/<li[^>]*>/g, "\n- ")
+    .replace(/<\/(p|ul|ol)>/g, "\n\n")
+    .replace(/<\/?strong>/g, "**")
+    .replace(/<[^>]+>/g, "")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&amp;/g, "&")
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+// Question and answer pairs from an article's own visible FAQ section (an h2 containing "FAQ",
+// "frequently asked questions" or "questions fréquentes", then h3 question + paragraph answer).
+// Returns [] when the article has no such section, so FAQ schema only ever mirrors visible text.
+export function extractFaq(html: string): { question: string; answer: string }[] {
+  const h2s = [...html.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/g)];
+  const idx = h2s.findIndex((m) => /FAQ|FREQUENTLY ASKED|QUESTIONS\s+FR[ÉE]QUENTES/i.test(stripTags(m[1])));
+  if (idx < 0) return [];
+  const start = (h2s[idx].index ?? 0) + h2s[idx][0].length;
+  const end = h2s[idx + 1]?.index ?? html.length;
+  const section = html.slice(start, end);
+  const items: { question: string; answer: string }[] = [];
+  for (const m of section.matchAll(/<h3[^>]*>([\s\S]*?)<\/h3>([\s\S]*?)(?=<h3|$)/g)) {
+    const question = stripTags(m[1]);
+    const answer = [...m[2].matchAll(/<p[^>]*>([\s\S]*?)<\/p>/g)].map((p) => stripTags(p[1])).join(" ");
+    if (question && answer) items.push({ question, answer });
+  }
+  return items;
 }
 
 // Trims to `max` characters on a word boundary, adding an ellipsis when cut.

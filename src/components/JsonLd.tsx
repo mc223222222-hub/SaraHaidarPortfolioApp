@@ -1,12 +1,17 @@
-import { DEFAULT_LOCALE, FIRM, SERVICES, SITE_URL, type Locale, localizedUrl } from "@/lib/seo";
+import { DEFAULT_DESCRIPTION, DEFAULT_LOCALE, FIRM, SERVICES, SITE_URL, type Locale, localizedUrl } from "@/lib/seo";
 
 function clean<T extends Record<string, unknown>>(obj: T): T {
   // Removes empty strings, empty arrays and empty objects so unfilled TODOs never ship as blank schema fields.
+  // Objects that carry an "@id" (references such as { "@id": firmId }) are always kept.
   return Object.fromEntries(
     Object.entries(obj).filter(([, v]) => {
       if (v === "" || v === undefined || v === null) return false;
-      if (Array.isArray(v) && v.length === 0) return false;
-      if (typeof v === "object" && !Array.isArray(v) && Object.keys(clean(v as Record<string, unknown>)).length <= 1) return false;
+      if (Array.isArray(v)) return v.length > 0;
+      if (typeof v === "object") {
+        const o = v as Record<string, unknown>;
+        if ("@id" in o) return true;
+        return Object.keys(clean(o)).some((k) => k !== "@type");
+      }
       return true;
     })
   ) as T;
@@ -15,7 +20,7 @@ function clean<T extends Record<string, unknown>>(obj: T): T {
 export default function JsonLd({ locale = DEFAULT_LOCALE }: { locale?: Locale }) {
   const firmId = `${SITE_URL}/#firm`;
   const personId = `${SITE_URL}/#sarah-haidar`;
-  const homeUrl = localizedUrl(DEFAULT_LOCALE, "");
+  const homeUrl = localizedUrl(locale, "");
 
   const firm = clean({
     "@type": ["LegalService", "Attorney"],
@@ -24,13 +29,29 @@ export default function JsonLd({ locale = DEFAULT_LOCALE }: { locale?: Locale })
     legalName: FIRM.legalName,
     url: homeUrl,
     image: `${SITE_URL}${FIRM.ogImage}`,
-    description:
-      "Law firm dedicated to immigration law and international mobility in France, for individuals and companies.",
+    description: DEFAULT_DESCRIPTION[locale],
     telephone: FIRM.telephone,
     email: FIRM.email,
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      telephone: FIRM.telephone,
+      email: FIRM.email,
+      availableLanguage: FIRM.languages,
+    },
+    employee: { "@id": personId },
     address: clean({ "@type": "PostalAddress", ...FIRM.address }),
     areaServed: { "@type": "Country", name: "France" },
     knowsLanguage: FIRM.languages,
+    knowsAbout: [
+      "Residence permits in France",
+      "Talent passport",
+      "Entrepreneur visa",
+      "French naturalization",
+      "Regularization of status",
+      "Family reunification",
+      "Corporate immigration",
+    ],
     priceRange: `Consultation ${FIRM.consultationFee}`,
     founder: { "@id": personId },
     sameAs: FIRM.sameAs,
@@ -49,7 +70,12 @@ export default function JsonLd({ locale = DEFAULT_LOCALE }: { locale?: Locale })
     "@id": personId,
     name: FIRM.lawyer,
     jobTitle: FIRM.jobTitle,
-    url: localizedUrl(DEFAULT_LOCALE, "/aboutMe"),
+    url: localizedUrl(locale, "/aboutMe"),
+    image: `${SITE_URL}${FIRM.portrait}`,
+    description:
+      locale === "fr"
+        ? "Avocate au Barreau de Paris, docteure en droit public et enseignante en droit des sociétés. Droit des étrangers en France, lutte anticorruption et conformité."
+        : "Avocat in Paris, Doctor of Public Law and lecturer in corporate law. Immigration law in France, anti-corruption and compliance.",
     worksFor: { "@id": firmId },
     memberOf: FIRM.bar ? { "@type": "Organization", name: FIRM.bar } : "",
     knowsLanguage: FIRM.languages,
@@ -59,6 +85,9 @@ export default function JsonLd({ locale = DEFAULT_LOCALE }: { locale?: Locale })
       "Public law",
       "Anti-corruption and compliance",
       "Corporate law",
+      "Residence permits",
+      "French naturalization",
+      "Talent passport",
     ],
     sameAs: FIRM.sameAs,
   });
@@ -70,6 +99,7 @@ export default function JsonLd({ locale = DEFAULT_LOCALE }: { locale?: Locale })
     name: FIRM.name,
     publisher: { "@id": firmId },
     inLanguage: locale,
+    about: { "@id": firmId },
   };
 
   const data = { "@context": "https://schema.org", "@graph": [firm, person, website] };
